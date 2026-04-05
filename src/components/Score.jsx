@@ -1,6 +1,6 @@
 import "../styles/Score.css";
 
-const ScoreHUD = ({ data }) => {
+const ScoreHUD = ({ data, foundProducts = [], mode = "business" }) => {
   // data = { carbon: "12.50", score: 85, verdict: "SUSTAINABLE" }
 
   const getVerdictColor = (verdict) => {
@@ -30,6 +30,28 @@ const ScoreHUD = ({ data }) => {
           </p> [cite: 28-29]
         </div>
       </div>
+
+      {/* Display found products in consumer mode */}
+      {mode === "consumer" && foundProducts.length > 0 && (
+        <div className="found-products">
+          <h3 className="products-title">EVALUATED_PRODUCTS</h3>
+          <div className="products-list">
+            {foundProducts.map((product) => (
+              <div key={product.id} className="product-item">
+                <div className="product-name">{product.name}</div>
+                <div className="product-stats">
+                  <span className="product-score" style={{ color: getVerdictColor(product.verdict) }}>
+                    SCORE: {product.score}
+                  </span>
+                  <span className="product-carbon">
+                    {product.carbon} kg/CO2
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

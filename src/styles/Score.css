@@ -48,3 +48,78 @@
   font-weight: bold;
   margin: 0;
 }
+
+/* Found Products Section */
+.found-products {
+  margin-top: 30px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.products-title {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  margin: 0 0 15px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 10px;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-item {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.product-item:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+.product-name {
+  font-size: 0.9rem;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+}
+
+.product-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.product-score {
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+}
+
+.product-carbon {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Courier New', monospace;
+}
+
+/* Scrollbar for products list */
+.found-products::-webkit-scrollbar {
+  width: 3px;
+}
+
+.found-products::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+}
