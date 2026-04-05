@@ -1,0 +1,214 @@
+.alternatives-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel-title {
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  border-left: 3px solid var(--neon-cyan);
+  padding-left: 10px;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+}
+
+.no-products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+}
+
+.info-text {
+  color: rgba(0, 242, 255, 0.6);
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.alternatives-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.alternative-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+
+.alternative-item:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+}
+
+.alternative-info {
+  flex: 1;
+}
+
+.alternative-name {
+  font-size: 0.9rem;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 6px;
+}
+
+.alternative-stats {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.score-badge {
+  background: rgba(0, 242, 255, 0.2);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-family: 'Courier New', monospace;
+}
+
+.carbon-change {
+  font-size: 0.7rem;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+.carbon-change.negative {
+  color: #00ff88; /* Green for reduction */
+}
+
+.carbon-change.positive {
+  color: #ff0055; /* Red for increase */
+}
+
+.add-alternative-btn {
+  background: rgba(0, 242, 255, 0.1);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.add-alternative-btn:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+}
+
+/* Dialog Styles */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 24px;
+  min-width: 300px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dialog-title {
+  font-size: 1rem;
+  color: var(--neon-cyan);
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.dialog-message {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0 0 20px 0;
+  font-family: 'Courier New', monospace;
+  line-height: 1.4;
+}
+
+.dialog-buttons {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.dialog-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  color: var(--neon-cyan);
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.dialog-btn:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.replace-btn:hover {
+  background: rgba(255, 0, 85, 0.2);
+  border-color: #ff0055;
+  color: #ff0055;
+}
+
+.add-btn:hover {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Scrollbar */
+.alternatives-list::-webkit-scrollbar {
+  width: 3px;
+}
+
+.alternatives-list::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+}
